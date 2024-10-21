@@ -37,10 +37,10 @@ def split(linked_list):
         mid = size//2
         mid_node = linked_list.node_at_index(mid-1)
 
-        left_half = linked_list
-        right_half = LinkedList()
+        left_half = linked_list #orignal linked list ,or start form the orignal
+        right_half = LinkedList() #new empty linked list
         right_half.head = mid_node.next_node
-        mid_node.next_node = None
+        mid_node.next_node = None # cut the connection to make 2 noees
 
         return left_half, right_half
 
@@ -54,7 +54,7 @@ def merge(left, right):
     """
 
     # Create a new linked list that contains nodes from merging left and right
-    merged = LinkedList()
+    merged = LinkedList()  #new linked list where new data is store
     # Add a fake head that is discarded later.
     merged.add(0)
     # Set current to the head of the linked list
@@ -69,7 +69,7 @@ def merge(left, right):
     while left_head or right_head:
         # If the head node of left is None, we're at the tail
         # Add the tail node from right to the merged linked list
-        if left_head is None:
+        if left_head is None:  #when left side is none
             current.next_node = right_head
             # Call next on right to set loop condition to False
             right_head = right_head.next_node
@@ -82,7 +82,7 @@ def merge(left, right):
         else:
             # Not at either tail node
             # Obtain node data to perform comparison operations
-            left_data = left_head.data
+            left_data = left_head.data #here where data is avilable in both side and we have to check wehere one is greater then other and vise versa
             right_data = right_head.data
 
             # If data on left is lesser than right set current to left node

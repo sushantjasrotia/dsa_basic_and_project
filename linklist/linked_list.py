@@ -10,7 +10,7 @@ class Node:
         self.data = data
 
     def __repr__(self):
-        return "<Node data: %s>" % self.data
+        return "<Node data: %s>" % self.data # %s is replace value of self.data , e.g Node data : 10
 
 class LinkedList:
 
@@ -29,7 +29,7 @@ class LinkedList:
             current = self.head
             count = 0
 
-            while current:
+            while current: #loop until current = 0
                 count += 1
                 current = current.next_node
 
@@ -40,7 +40,7 @@ class LinkedList:
         Takes 0(1) time"""
         new_node =Node(data)
         new_node.next_node = self.head
-        self.head = new_node
+        self.head = new_node  # new node is adding at the start so new_node.next_node = self.head
 
     def search(self, key):
         """ Search for the first node containing data that matches the key
@@ -70,7 +70,8 @@ class LinkedList:
 
             while position > 1:
                 current = Node.next_node
-                position -=1
+                position -=1  # we take negative , we have to stop 1 index before
+                # so that we connect prev node to new and new node to next_node
 
             prev_node = current
             next_node = current.next_node
@@ -87,7 +88,7 @@ class LinkedList:
         found = False
 
         while current and not found:
-            if current.data == key and current is self.head:
+            if current.data == key and current is self.head: # the  key is at head remove head
                 found = True
                 self.head = current.next_node
             elif current.data == key:
@@ -98,7 +99,7 @@ class LinkedList:
                 current = current.next_node
         return current
 
-    def node_at_index(self, index):
+    def node_at_index(self, index): #this function helps us to find the index fo the link-list
         if index == 0:
             return self.head
         else:
@@ -111,7 +112,7 @@ class LinkedList:
 
             return current
 
-    def __repr__(self):
+    def __repr__(self):  #reper fxn used to represent string representation of an object
         """Return a string representation of the list
         Takes o(n) time"""
 
@@ -119,12 +120,12 @@ class LinkedList:
         current = self.head
 
         while current:
-            if current is self.head:
+            if current is self.head: # it cheak , is it a head then we print head: 10
                 nodes.append("[Head: %s]" % current.data)
-            elif current.next_node is None:
+            elif current.next_node is None: # it check if there is tail present or not , if not than its a tail
                 nodes.append("[Tail: %s]" % current.data)
             else:
-                nodes.append("[%s]" % current.data)
+                nodes.append("[%s]" % current.data) # this is neither head nor tail
 
             current = current.next_node
         return '->' .join(nodes)

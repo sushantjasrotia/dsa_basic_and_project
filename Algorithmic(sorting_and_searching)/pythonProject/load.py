@@ -1,7 +1,7 @@
 def load_numbers(numbers_sort):
     numbers = [ ]  # Initial hardcoded numbers
-    try:
-        with open(numbers_sort) as f:
+    try: #it is used to handle exception if error occur or anything goes wrong
+        with open(numbers_sort) as f: #open file and assign variable f and with it auto close the file when the block is exited
             for line in f:
                 numbers.append(int(line.strip()))  # Convert each line to an integer
         print("Numbers loaded:", numbers)

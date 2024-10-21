@@ -11,7 +11,7 @@ def merge_sort(list):
     if len(list) <= 1:
         return list
 
-    left_half, right_half = split(list)
+    left_half, right_half = split(list)  # left_half and right_half are return left and right list from split function (def split(list))
     left = merge_sort(left_half)
     right = merge_sort(right_half)
 
@@ -68,6 +68,22 @@ def varify_sorted(list):
         return True
 
     return list[0] < list[1] and varify_sorted(list[1:])
+# Explanation: The varify_sorted function takes a parameter 'list', which is a list of numbers.
+# We store the length of the list in the variable 'n'. Using an if statement, we check if 'n'
+# is 0 or 1. If it is, we return True because a list with 0 or 1 element is already sorted.
+#
+# After that, we call the recursive function. First, we check if list[0] < list[1]. This checks
+# if the value at the first index is less than the value at the second index. If this condition
+# is true, we call the recursive function varify_sorted(list[1:]). The expression list[1:]
+# means "from the second index to the end of the list."
+#
+# The if statement is executed again with the new sublist (list[1:]), repeating the same checks
+# recursively.
+#
+# The 'and' is used as a logical operator, meaning both conditions (list[0] < list[1] and
+# varify_sorted(list[1:])) must be True for the recursion to continue. If either condition
+# is False, the function returns False, and recursion stops.
+
 """ recursive function (calling its self again again and again)"""
 
 alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]

@@ -2,11 +2,12 @@ import random
 import sys
 from load import load_strings
 
-if len(sys.argv) < 2:
-    print("Usage: python your_script.py <file_path>")
-    sys.exit(1)  # Exit the program if no argument is provided
-
-names = load_strings(sys.argv[1])
+# if len(sys.argv) < 2:
+#     print("Usage: python your_script.py <file_path>")
+#     sys.exit(1)  # Exit the program if no argument is provided
+#
+# names = load_strings(sys.argv[1])
+names = load_strings("abc.txt")
 
 search_names = ["Francina Vigneault", "Lucie Hansman", "Nancie Rubalcaba", "Elida Sleight", "Guy Lashbaugh", "Ginger Schlossman",
                 "Suellen Luaces", "Jamey Kirchgesler", "Amiee Elwer", "Lacresha Peet", "Leonia Goretti", "Carina Bunge", "Renee Brendeland",
@@ -28,5 +29,5 @@ def index_of_item(collection, target):
 
 
 for n in search_names:
-    index = index_of_item(names,  n)
+    index = index_of_item(names,  n) # here collection is the name which had abc.text file and target is n and n is the list of name in search_names
     print(index)

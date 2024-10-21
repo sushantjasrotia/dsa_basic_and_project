@@ -7,7 +7,7 @@ def recursive_binary_search(list, target_value):
             return True
         else:
             if list[midpoint] < target_value:
-                return recursive_binary_search(list[midpoint+1 :], target_value)
+                return recursive_binary_search(list[midpoint+1 :], target_value) #recursive function where it again call def recursive_binary_search
             else:
                 return recursive_binary_search(list[: midpoint], target_value)
 

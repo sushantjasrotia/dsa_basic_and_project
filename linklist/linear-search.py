@@ -41,5 +41,10 @@ def exp(abc):
         print("not found")
 
 result = lin_search(number, 5)
+# here we calling the lin_search function with parameters number (which is list of number)
+#and  number to find which we give 5
+#list[i] is particlular number in a list what we care comparing
 exp(result)
+# here we passing the result or number in exp function
+# this show us print statement
 
