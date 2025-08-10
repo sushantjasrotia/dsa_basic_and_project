@@ -31,8 +31,8 @@ def merge(left, right):
         return sorted_list
 
 number = read_number_from_file("data.txt")
-print("Numbers before sorted:", number)
+print("Numbers before sorting:", number)
 sorted_number = merge_sort(number)
-print("Numbers after Merge Sort:", sorted_number)
+print("Numbers after Merge_Sort:", sorted_number)
 
 
