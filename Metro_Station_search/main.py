@@ -5,14 +5,17 @@ def dijkstra(graph, start, end):
     distance = {station: float('inf') for station in graph}
     distance[start] = 0
 
-    # For shortest path reconstruction
+    # For shortest path reconstruction(remember prv path)
+    # at the start everything is none
     previous_nodes = {station: None for station in graph}
 
     # Min-heap priority queue
+    # its start with AA with distance 0
+    #it always gives us a smallest distance between stations
     pq = [(0, start)]
 
     while pq:
-        current_distance, current_station = heapq.heappop(pq)
+        current_distance, current_station = heapq.heappop(pq)#First time: ("AA", 0).
 
         # Skip if we've already found a better path
         if current_distance > distance[current_station]:
